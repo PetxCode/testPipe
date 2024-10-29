@@ -11,7 +11,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World from CodeLab started!");
 });
 app.get("/test", (req: Request, res: Response) => {
-  res.send("This is codelab!");
+  res.send("This is codelab updated!");
 });
 
 app.use("/api", task);
