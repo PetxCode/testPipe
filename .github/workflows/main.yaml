@@ -1,6 +1,5 @@
 name: Push-to-EC2
-# sudo mv * /var/www/html
-# Trigger deployment only on push to main branch
+
 on:
   push:
     branches:

@@ -7,6 +7,9 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World from CodeLab!");
 });
+app.get("/test", (req: Request, res: Response) => {
+  res.send("This is codelab!");
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
