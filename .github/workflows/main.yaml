@@ -35,5 +35,6 @@ jobs:
             cd home
             sudo npm install
             sudo pm2 stop all
+            sudo npm run stop 
             sudo tsc
             sudo node ./dist/index.js
