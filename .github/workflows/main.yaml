@@ -32,4 +32,4 @@ jobs:
             cd home
             sudo npm install
             sudo tsc
-            sudo pm2 stop all && sudo start ./dist/index.js
+            sudo pm2 stop all && start ./dist/index.js
