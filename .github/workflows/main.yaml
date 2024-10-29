@@ -36,4 +36,4 @@ jobs:
             sudo npm install
             sudo pm2 stop all
             sudo tsc
-            sudo pm2 start ./dist/index.js
+            sudo node ./dist/index.js
