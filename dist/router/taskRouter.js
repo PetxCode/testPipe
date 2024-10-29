@@ -5,4 +5,6 @@ const taskController_1 = require("../controller/taskController");
 const router = (0, express_1.Router)();
 router.route("/create-task").post(taskController_1.createTask);
 router.route("/read-task").get(taskController_1.getTask);
+router.route("/update-task/:taskID").patch(taskController_1.updateTask);
+router.route("/delete-task/:taskID").delete(taskController_1.deleteTask);
 exports.default = router;

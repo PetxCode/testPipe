@@ -16,14 +16,14 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = require("mongoose");
 const taskRouter_1 = __importDefault(require("./router/taskRouter"));
 const URL = "mongodb+srv://skillscapeofficier:skillscapeofficier@cluster0.0dubq.mongodb.net/testTask?retryWrites=true&w=majority&appName=Cluster0";
-const port = 1144;
+const port = 1166;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.get("/", (req, res) => {
-    res.send("Hello World from CodeLab!");
+    res.send("Hello World from CodeLab started!");
 });
 app.get("/test", (req, res) => {
-    res.send("This is codelab!");
+    res.send("This is codelab updated!");
 });
 app.use("/api", taskRouter_1.default);
 app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {

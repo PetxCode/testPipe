@@ -12,11 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTask = exports.createTask = void 0;
+exports.deleteTask = exports.updateTask = exports.getTask = exports.createTask = void 0;
 const taskModel_1 = __importDefault(require("../model/taskModel"));
 const createTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { title } = req.body;
+        console.log(req.body);
         const task = yield taskModel_1.default.create({
             title,
         });
@@ -47,3 +48,36 @@ const getTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getTask = getTask;
+const updateTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { taskID } = req.params;
+        const { title } = req.body;
+        const task = yield taskModel_1.default.findByIdAndUpdate(taskID, { title }, { new: true });
+        return res.status(201).json({
+            data: task,
+            status: 201,
+        });
+    }
+    catch (error) {
+        return res.status(404).json({
+            error: error,
+        });
+    }
+});
+exports.updateTask = updateTask;
+const deleteTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { taskID } = req.params;
+        const task = yield taskModel_1.default.findByIdAndDelete(taskID);
+        return res.status(201).json({
+            data: task,
+            status: 201,
+        });
+    }
+    catch (error) {
+        return res.status(404).json({
+            error: error,
+        });
+    }
+});
+exports.deleteTask = deleteTask;
