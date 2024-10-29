@@ -31,6 +31,9 @@ jobs:
           script: |
             cd home
             sudo npm install
-            sudo tsc
             sudo pm2 stop all
-            sudo pm2 start ./dist/index.js
+            sudo tsc
+            sudo npm start
+
+# sudo pm2 stop all
+#             sudo pm2 start ./dist/index.js
