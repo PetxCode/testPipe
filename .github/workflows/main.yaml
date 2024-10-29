@@ -32,4 +32,5 @@ jobs:
           script: |
             cd home
             sudo npm install
-            sudo npm start --watch
+            sudo tsc
+            sudo sudo pm2 restart all
