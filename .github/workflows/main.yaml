@@ -34,8 +34,8 @@ jobs:
           script: |
             cd home
             sudo pm2 stop all
-            sudo npm install
             sudo tsc
-            sudo pm2 start ./dist/index.js
+            sudo npm install
+            sudo node ./dist/index.js
 
 # sudo npm run dstop
