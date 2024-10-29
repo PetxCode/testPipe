@@ -5,6 +5,8 @@ export const createTask = async (req: Request, res: Response) => {
   try {
     const { title } = req.body;
 
+    console.log(req.body);
+
     const task = await taskModel.create({
       title,
     });

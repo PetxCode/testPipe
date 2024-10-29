@@ -6,7 +6,7 @@ interface iTask {
 
 interface iTaskData extends iTask, Document {}
 
-const taskModel = new Schema(
+const taskModel = new Schema<iTaskData>(
   {
     title: {
       type: String,

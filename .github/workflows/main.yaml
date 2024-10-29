@@ -35,6 +35,7 @@ jobs:
             cd home
             sudo npm install
             sudo pm2 stop all
-            sudo npm run dstop 
             sudo tsc
-            sudo node ./dist/index.js
+            sudo pm2 start ./dist/index.js
+
+# sudo npm run dstop
