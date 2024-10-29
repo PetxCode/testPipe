@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node ./dist/index.js",
     "stop": "pkill -f ./dist/index.js",
-    "dstop": "kill $(lsof -t -i:1144)",
-    "ddstop": "lsof -t -i:1144 | xargs kill -9",
-    "dddstop": "for /f \"tokens=5\" %a in ('netstat -a -n -o | findstr :1144') do taskkill /F /PID %a"
+    "dstop": "kill $(lsof -t -i:1166)",
+    "ddstop": "lsof -t -i:1166 | xargs kill -9",
+    "dddstop": "for /f \"tokens=5\" %a in ('netstat -a -n -o | findstr :1166') do taskkill /F /PID %a"
   },
   "keywords": [],
   "author": "",
