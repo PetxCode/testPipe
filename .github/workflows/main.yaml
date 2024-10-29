@@ -1,3 +1,6 @@
+# sudo pm2 stop all
+#             sudo pm2 start ./dist/index.js
+
 name: Push-to-EC2
 
 on:
@@ -7,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to EC2 on master branch push
+    name: Deploy to EC2 on main branch push
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +26,7 @@ jobs:
           TARGET: ${{ secrets.TARGET_DIR }}
 
       - name: Executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@main
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
@@ -33,7 +36,4 @@ jobs:
             sudo npm install
             sudo pm2 stop all
             sudo tsc
-            sudo npm start
-
-# sudo pm2 stop all
-#             sudo pm2 start ./dist/index.js
+            sudo pm2 start ./dist/index.js
