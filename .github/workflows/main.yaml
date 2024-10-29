@@ -31,4 +31,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd home
+            sudo npm install
             sudo npm start --watch
