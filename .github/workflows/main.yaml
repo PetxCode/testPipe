@@ -31,4 +31,4 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd home
-            sudo pm2 start ./dist/index.js
+            sudo npm start --watch
