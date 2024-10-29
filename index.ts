@@ -5,7 +5,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.send("Hello World from CodeLab!");
 });
 
 app.listen(port, () => {
